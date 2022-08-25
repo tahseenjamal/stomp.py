@@ -536,8 +536,7 @@ class Transport(BaseTransport):
             for host_and_port in sorted_host_and_ports:
                 if is_localhost(host_and_port) == 1:
                     port = host_and_port[1]
-                    if not (("127.0.0.1", port) in sorted_host_and_ports or (
-                    "localhost", port) in sorted_host_and_ports):
+                    if ("localhost", port) in sorted_host_and_ports:
                         loopback_host_and_ports.append(("127.0.0.1", port))
 
         #
